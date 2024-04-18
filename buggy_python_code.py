@@ -1,7 +1,6 @@
-import sys
-import os
 import yaml
 import flask
+import urllib
 
 app = flask.Flask(__name__)
 
@@ -36,7 +35,7 @@ def fetch_website(urllib_version, url):
  
     try:
         http = urllib.PoolManager()
-        r = http.request('GET', url)
+        _ = http.request('GET', url)
     except:
         print('Exception')
 
@@ -75,4 +74,3 @@ if __name__ == '__main__':
     elif choice == "4":
         password = input("Enter master password: ")
         authenticate(password)
-
